@@ -1,11 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>spring</groupId>
+    <artifactId>hotel</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
   <groupId>spring</groupId>
-  <artifactId>hotel</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>client</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>hotel Maven Webapp</name>
+  <packaging>war</packaging>
+  <name>client Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -16,7 +22,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>hotel</finalName>
+    <finalName>client</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -28,9 +34,4 @@
       </plugin>
     </plugins>
   </build>
-  <modules>
-  	<module>admin</module>
-  	<module>client</module>
-  	<module>common</module>
-  </modules>
 </project>

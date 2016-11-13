@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <account accountId="1" username="admin" password="admin" mail="admin@mail.ru"/>
+    <role roleId="1" nameRole="admin" description="site admin"/>
+    <account_role accountId="1" roleId="1"/>
+</dataset>
