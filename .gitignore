@@ -4,4 +4,7 @@ target
 .classpath
 .project
 *.iml
+.gitignore
+db.properties
+
 
