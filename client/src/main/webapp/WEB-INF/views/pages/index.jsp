@@ -1,5 +1,6 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <div class="city">
-    <a>asdasdasdas</a>
     <div class="top-mini-header">
         <div style="float: left"></div>
         <div style="float: right"><a href="#">LOGIN</a></div>
@@ -12,7 +13,7 @@
 </div>
 <div class="best-week">
     <div style="text-align: center">
-        <h1>Best of the week</h1>
+        <h1><spring:message code="index.label.best"/> </h1>
     </div>
     <div class="container" style="margin-bottom: 50px">
         <div class="row">
