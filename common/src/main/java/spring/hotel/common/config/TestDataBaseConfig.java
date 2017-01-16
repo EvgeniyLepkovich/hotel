@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -16,8 +17,9 @@ import javax.sql.DataSource;
  */
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(value = {"spring.hotel.common.persistance", "spring.hotel.common.service"})
+@ComponentScan(value = {"spring.hotel.common.persistance.dao"})
 @PropertySource("classpath:db.properties")
+@EnableJpaRepositories(value = {"spring.hotel.common.persistance.dao"})
 public class TestDataBaseConfig extends DataBase {
     @Value("${dbtest.driver}")
     private String driver;
@@ -46,7 +48,7 @@ public class TestDataBaseConfig extends DataBase {
     }
 
     @Bean
-    public DataSource dataSource(){
+    public DataSource testDataSource(){
         return super.dataSource(dataSourceProp(driver, url, username, password));
     }
 }

@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -15,7 +16,7 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import spring.hotel.common.config.TestDataBaseConfig;
-import spring.hotel.common.persistance.dao.impl.AccountDao;
+import spring.hotel.common.persistance.dao.AccountDao;
 import spring.hotel.common.persistance.to.Account;
 
 /**
@@ -30,9 +31,10 @@ import spring.hotel.common.persistance.to.Account;
         DbUnitTestExecutionListener.class
 })
 @DatabaseTearDown(value = "/data/dbTearDown.xml")
+@DirtiesContext
 public class AccountDaoTest {
     @Autowired
-    AccountDao accountDao;
+    private AccountDao accountDao;
 
     @Test
     @DatabaseSetup(value = "/data/account/accountData.xml")
@@ -41,29 +43,4 @@ public class AccountDaoTest {
         Assert.assertEquals("admin", account.getUsername());
         Assert.assertEquals("admin", account.getRoles().get(0).getNameRole());
     }
-
-    @Test
-    @DatabaseSetup(value = "/data/section/section-data.xml")
-    public void findAccountById() throws Exception {
-
-    }
-
-    @Test
-    @DatabaseSetup(value = "/data/section/section-data.xml")
-    public void addAccount() throws Exception {
-
-    }
-
-    @Test
-    @DatabaseSetup(value = "/data/section/section-data.xml")
-    public void updateAccount() throws Exception {
-
-    }
-
-    @Test
-    @DatabaseSetup(value = "/data/section/section-data.xml")
-    public void deleteAccountById() throws Exception {
-
-    }
-
 }

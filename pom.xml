@@ -7,6 +7,13 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>hotel Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.4.1.RELEASE</version>
+  </parent>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -32,5 +39,6 @@
   	<module>admin</module>
   	<module>client</module>
   	<module>common</module>
+    <module>security</module>
   </modules>
 </project>

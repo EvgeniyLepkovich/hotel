@@ -2,6 +2,7 @@ package spring.hotel.common.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -14,6 +15,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan(value = {"spring.hotel.common.persistance", "spring.hotel.common.service"})
+@EnableJpaRepositories(value = {"spring.hotel.common.persistance.dao"})
 @PropertySource("classpath:db.properties")
 public class ProductionDataBaseConfig extends DataBase{
     @Value("${db.driver}")
