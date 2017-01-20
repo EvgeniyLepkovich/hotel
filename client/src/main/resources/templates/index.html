@@ -20,7 +20,7 @@
         With Facebook: <a href="/login/facebook">click here</a>
     </div>
     <div>
-        With Github: <a href="/login/github">click here</a>
+        With vk: <a href="/login/vk">click here</a>
     </div>
     <div>
         With Google: <a href="/login/google">click here</a>
@@ -46,13 +46,14 @@
         var self = this;
         $http.get("/user").success(function(data) {
             if (data.name) {
-                self.user = data.name + ' (id: ' + data.id + ', e-mail: ' + data.email + ')';
+                self.user = data.name;
                 self.authenticated = true;
             } else {
                 self.user = "N/A";
                 self.authenticated = false;
             }
-        }).error(function() {
+        }).error(function(data) {
+            alert(data.message);
             self.user = "N/A";
             self.authenticated = false;
         });

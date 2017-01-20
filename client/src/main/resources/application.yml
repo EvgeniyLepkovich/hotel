@@ -1,16 +1,8 @@
-security:
-  oauth2:
-    client:
-      client-id: acme
-      client-secret: acmesecret
-      scope: read,write
-      auto-approve-scopes: '.*'
-
 facebook:
   client:
     id: facebook
-    clientId: 233668646673605
-    clientSecret: 33b17e044ee6a4fa383f46ec6e28ea1d
+    clientId: 105703053274815
+    clientSecret: 0e807dfd0dbb5177a1dab543232a3c01
     accessTokenUri: https://graph.facebook.com/oauth/access_token
     userAuthorizationUri: https://www.facebook.com/dialog/oauth
     tokenName: oauth_token
@@ -19,43 +11,27 @@ facebook:
     scope: email
   resource:
     userInfoUri: https://graph.facebook.com/me
-github:
+vk:
   client:
-    id: github
-    clientId: bd1c0a783ccdd1c9b9e4
-    clientSecret: 1a9030fbca47a5b2c28e92f19050bb77824b5ad1
-    accessTokenUri: https://github.com/login/oauth/access_token
-    userAuthorizationUri: https://github.com/login/oauth/authorize
+    id: vk
+    clientId: 5831754
+    clientSecret: wLFIdqtr4TRUDhLtNkHa
+    accessTokenUri: https://oauth.vk.com/access_token
+    userAuthorizationUri: https://oauth.vk.com/authorize
+    tokenName: code
+    authenticationScheme: query
     clientAuthenticationScheme: form
-    scope: user:email
+    scope: email
   resource:
-    userInfoUri: https://api.github.com/user 
+    userInfoUri: https://api.vk.com/method/users.get
 google:
   client:
     id: google
-    clientId: 867395475881-3ag3qa1cl26cv894t1p8gujpoo8cq62v.apps.googleusercontent.com
-    clientSecret: qLW3mYVDVM9iob_xQrmWbUwi
-    accessTokenUri: https://www.googleapis.com/oauth2/v4/token
-    userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+    clientId: 916157345086-g2k288oqhj5lqundvjt946v36veas1im.apps.googleusercontent.com
+    clientSecret: IJcwKwgXkD3r6xJkGQiaYhXa
+    accessTokenUri: https://accounts.google.com/o/oauth2/token
+    userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
     clientAuthenticationScheme: form
-    scope: profile,https://www.googleapis.com/auth/userinfo.email
+    scope: profile email
   resource:
-    userInfoUri: https://www.googleapis.com/plus/v1/people/me
-corporate:
-  client:
-    id: epam
-    clientId: dev-lms.szeged.epam.com
-    accessTokenUri: https://login-prod.epm-sso.projects.epam.com/adfs/oauth2/token
-    userAuthorizationUri: https://login-prod.epm-sso.projects.epam.com/adfs/oauth2/authorize?resource=http://localhost:8080/
-    authenticationScheme: query
-    clientAuthenticationScheme: form
-
-logging:
-  level:
-    org.springframework.security: DEBUG
-    com.example: DEBUG    
-
-spring:
-  resources:
-    chain:
-      enabled: true
+    userInfoUri: https://www.googleapis.com/userinfo/v2/me

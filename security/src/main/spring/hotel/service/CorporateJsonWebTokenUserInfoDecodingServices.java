@@ -4,13 +4,17 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.jwt.Jwt;
 import org.springframework.security.jwt.JwtHelper;
 import spring.hotel.common.persistance.to.Account;
+import spring.hotel.model.Authorities;
 import spring.hotel.model.Oauth2ClientResources;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.springframework.util.Assert.notNull;
@@ -24,7 +28,7 @@ import static org.springframework.util.Assert.notNull;
 public class CorporateJsonWebTokenUserInfoDecodingServices extends AbstractUserInfoTokenServices {
 
   private static final String WEBTOKENATTR_EMAIL = "email";
-  private static final String WEBTOKENATTR_FULLNAME = "unique_name";
+  private static final String WEBTOKENATTR_FULLNAME = "first_name";
   private static final String WEBTOKENATTR_USERID = "upn"; // == e-mail
 
   protected final Log logger = LogFactory.getLog(getClass());
@@ -78,11 +82,11 @@ public class CorporateJsonWebTokenUserInfoDecodingServices extends AbstractUserI
     return principal;
   }
 
-//  protected List<GrantedAuthority> determineGrantedAuthoritiesFor(Account principal) {
-//    List<GrantedAuthority> grantedAuthorities = AuthorityUtils.createAuthorityList(Authorities.ROLE_USER,
-//        Authorities.AUTHENTICATED_VIA_CORPORATE_SITE);
-//    return grantedAuthorities;
-//  }
+  protected List<GrantedAuthority> determineGrantedAuthoritiesFor(Account principal) {
+    List<GrantedAuthority> grantedAuthorities = AuthorityUtils.createAuthorityList(Authorities.ROLE_USER,
+        Authorities.AUTHENTICATED_VIA_CORPORATE_SITE);
+    return grantedAuthorities;
+  }
 
   class UnableToExtractPrincipalInfoFromJsonWebTokenException extends RuntimeException {
     private static final long serialVersionUID = 1080837820030279676L;

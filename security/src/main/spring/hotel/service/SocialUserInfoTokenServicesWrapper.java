@@ -2,8 +2,11 @@ package spring.hotel.service;
 
 import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import spring.hotel.common.persistance.to.Account;
+import spring.hotel.model.Authorities;
 import spring.hotel.model.Oauth2ClientResources;
 
 import java.util.List;
@@ -20,7 +23,7 @@ public class SocialUserInfoTokenServicesWrapper extends AbstractUserInfoTokenSer
   protected UserInfoTokenServices wrappedUserInfoTokenServices;
 
   private static final String WEBTOKENATTR_EMAIL = "email";
-  private static final String WEBTOKENATTR_FULLNAME = "name";
+  private static final String WEBTOKENATTR_FULLNAME = "first_name";
   private static final String WEBTOKENATTR_USERID = "id";
   private static final String WEBTOKENATTR_DISPLAYNAME = "displayName";
 
@@ -84,11 +87,11 @@ public class SocialUserInfoTokenServicesWrapper extends AbstractUserInfoTokenSer
     return principal;
   }
 
-//  @Override
-//  protected List<GrantedAuthority> determineGrantedAuthoritiesFor(Account principal) {
-//    List<GrantedAuthority> grantedAuthorities = AuthorityUtils.createAuthorityList(Authorities.ROLE_USER,
-//        Authorities.AUTHENTICATED_VIA_SOCIAL_SITE);
-//    return grantedAuthorities;
-//  }
+  @Override
+  protected List<GrantedAuthority> determineGrantedAuthoritiesFor(Account principal) {
+    List<GrantedAuthority> grantedAuthorities = AuthorityUtils.createAuthorityList(Authorities.ROLE_USER,
+        Authorities.AUTHENTICATED_VIA_SOCIAL_SITE);
+    return grantedAuthorities;
+  }
 
 }
