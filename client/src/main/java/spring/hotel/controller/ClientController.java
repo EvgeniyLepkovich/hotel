@@ -18,7 +18,7 @@ public class ClientController {
     @RequestMapping(value = { "/user", "/me"}, method = RequestMethod.GET)
     public Map<String, String> user(Principal principal) {
         Map<String, Object> details = (Map<String, Object>) ((OAuth2Authentication) principal).getUserAuthentication().getDetails();
-        Map<String, String> map = new LinkedHashMap<>();
+        Map<String, String> map = new LinkedHashMap<String, String>();
         map.put("name", (String) details.get("name"));
         map.put("email", (String) details.get("email"));
         return map;
