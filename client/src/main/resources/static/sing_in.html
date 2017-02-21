@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>index</title>
-	<link rel="stylesheet" href="../css/bootstrap.css">
-  <link rel="stylesheet" href="../css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-	<link rel="stylesheet/less" type="text/css" href="../less/style.less" />
+	<link rel="stylesheet/less" type="text/css" href="less/style.less" />
 </head>
 <body>
 	<header class="header">
@@ -21,33 +21,45 @@
 	</header>
 	<div class="content container">
 		<div class="row">
-			<div class="col-sm-5 col-sm-offset-1">
+			<div class="col-sm-4 col-sm-offset-2">
 				
 			</div>
-			<div class="col-sm-5">
-				<form class="content__sing">
+			<div class="col-sm-4">
+				<form class="content__sing content__sing-in">
 					<div class="row">
-						<div class="col-sm-6">Create an account</div>
-						<div class="col-sm-6 text-right">Or 
-							<a href="#" class="content__sing__link">Log in</a>
+						<div class="col-md-4">SING IN</div>
+						<div class="col-md-8 text-right">
+							<a href="#" class="content__sing__link">or create an account</a>
 						</div>
 					</div>
-					<input type="text" class="content__sing__input" placeholder="First name">
-					<input type="text" class="content__sing__input" placeholder="Last name">
-					<input type="text" class="content__sing__input" placeholder="Email">
-					<input type="password" class="content__sing__input" placeholder="Password">
+					<input type="text" class="content__sing__input" placeholder="type your name or e-mail">
+					<input type="text" class="content__sing__input" placeholder="password">
 					<div class="row">
-						<div class="col-sm-6">
+						<div class="col-md-7">
 							<div class="remember">
 								<input type="checkbox" class="remember__checkbox" id="remember__checkbox" />
-								<label for="remember__checkbox">I agree to the <a href="#" class="content__sing__link content__sing__link-small">terms</a></label>
+								<label for="remember__checkbox">remember</label>
 							</div>
+							<a href="#" class="content__sing__link content__sing__link-lost">Forgotten your password?</a>
 						</div>
-						<div class="col-sm-6 text-right">
-							<a href="#" class="content__sing__btn">CREATE AN ACCOUNT</a>
+						<div class="col-md-5 text-right">
+							<a href="#" class="content__sing__btn">SING IN</a>
 						</div>
 					</div>
 				</form>
+				<div class="authentication"></div>
+					<a href="#" class="authentication__item">
+						<span class="authentication__item__icon"></span>
+					</a>
+					<a href="#" class="authentication__item authentication__item-tw">
+						<span class="authentication__item__icon authentication__item__icon-tw"></span>
+					</a>
+					<a href="#" class="authentication__item authentication__item-g">
+						<span class="authentication__item__icon authentication__item__icon-g"></span>
+					</a>
+					<a href="#" class="authentication__item authentication__item-fb">
+						<span class="authentication__item__icon authentication__item__icon-fb"></span>
+					</a>
 			</div>	
 		</div>
 	</div>
@@ -90,10 +102,10 @@
 		</div>	
 	</footer>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../js/less.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/less.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-	<script type="text/javascript" src="../js/cssfx.js"></script>
-	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="js/cssfx.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
