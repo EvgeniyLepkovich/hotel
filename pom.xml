@@ -15,22 +15,6 @@
   </parent>
 
   <dependencies>
-    <!--spring boot-->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-devtools</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-
     <!--webjars-->
     <dependency>
       <groupId>org.webjars</groupId>
@@ -62,16 +46,11 @@
   <build>
     <finalName>hotel</finalName>
     <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
     </plugins>
   </build>
   <modules>
   	<module>admin</module>
   	<module>client</module>
   	<module>common</module>
-    <module>security</module>
   </modules>
 </project>

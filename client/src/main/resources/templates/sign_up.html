@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8"/>
 	<title>index</title>
-	<link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/bootstrap-theme.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-	<link rel="stylesheet/less" type="text/css" href="less/style.less" />
+	<link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+	<link rel="stylesheet" th:href="@{/css/bootstrap-theme.css}"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/slick.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
 	<header class="header">
@@ -32,10 +32,10 @@
 							<a href="#" class="content__sing__link">Log in</a>
 						</div>
 					</div>
-					<input type="text" class="content__sing__input" placeholder="First name">
-					<input type="text" class="content__sing__input" placeholder="Last name">
-					<input type="text" class="content__sing__input" placeholder="Email">
-					<input type="password" class="content__sing__input" placeholder="Password">
+					<input type="text" class="content__sing__input" placeholder="First name"/>
+					<input type="text" class="content__sing__input" placeholder="Last name"/>
+					<input type="text" class="content__sing__input" placeholder="Email"/>
+					<input type="password" class="content__sing__input" placeholder="Password"/>
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="remember">
@@ -90,10 +90,10 @@
 		</div>	
 	</footer>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/less.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/less.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-	<script type="text/javascript" src="js/cssfx.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	<!--<script type="text/javascript" src="/js/cssfx.js"></script>-->
+	<script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
