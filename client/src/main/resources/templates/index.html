@@ -23,8 +23,8 @@
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">
 				<form method="post" class="search__main">
-				  <input type="search" name="search__main-input" placeholder="type city, country or address" class="search__main-input" />
-				  <input type="submit" name="search__main-submit" value="" class="search__main-submit" />
+				  <input type="search" id="search__main-input" name="search__main-input" placeholder="type city, country or address" class="search__main-input"/>
+				  <input type="submit" id="search__main-submit" name="search__main-submit" value="" class="search__main-submit" />
 				</form>
 			</div>
 		</div>
@@ -154,11 +154,20 @@
 				</div>
 		</div>	
 	</footer>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+	<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>-->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/less.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 	<!--<script type="text/javascript" src="/js/cssfx.js"></script>-->
 	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="/js/api-maps.yandex.js"></script>
+
+	<script>
+		ymaps.ready(function () {
+			var suggestView = new ymaps.SuggestView('search__main-input');
+			alert('hello');
+		});
+	</script>
 </body>
 </html>
